@@ -13,7 +13,7 @@ const policyRoutes = require('./routes/policyRoutes');
 const payoutRoutes = require('./routes/payoutRoutes');
 const dailyReportRoutes = require('./routes/dailyReportRoutes');
 const misPolicyRoutes = require('./routes/misPolicyRoutes');
-const aiRoutes = require("./routes/aiRoutes");
+
 const aiFollowUpRoutes = require('./routes/aiFollowUpRoutes');
 
 connectDB();
@@ -34,7 +34,7 @@ app.use('/api/policies', policyRoutes);
 app.use('/api/payouts', payoutRoutes);
 app.use('/api/daily-report', dailyReportRoutes);
 app.use('/api/mis-policies', misPolicyRoutes);
-app.use("/api/ai", aiRoutes);
+
 app.use('/api/ai-followup', aiFollowUpRoutes);
 
 
