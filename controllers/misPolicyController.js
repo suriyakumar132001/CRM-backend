@@ -239,3 +239,12 @@ exports.scanPolicyPdf = async (req, res) => {
     res.status(500).json({ message: 'Failed to scan PDF', error: err.message });
   }
 };
+
+exports.deleteAllMisPolicies = async (req, res) => {
+  try {
+    const result = await MisPolicy.deleteMany({ owner: req.user.id });
+    res.json({ message: 'All MIS policies deleted', deletedCount: result.deletedCount });
+  } catch (err) {
+    res.status(500).json({ message: 'Server error', error: err.message });
+  }
+};
